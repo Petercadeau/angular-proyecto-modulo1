@@ -1,0 +1,31 @@
+<form *ngIf="!authService.getUser()">
+
+    <div class="form-login">
+        <h1>Iniciar sesión</h1>
+        <div class="form-group">
+            <label for="username">User: (type "<em>user</em>")</label>
+            <input class="form-control" name="username" #username id="username" placeholder="Username">
+
+            <div style="display: none;" id="erroremail" class="alert alert-danger alert-dismissible fade show" role="alert">
+                Ingrese un correo
+                <button onclick="dismiss(this)" id="alertCorreo" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password: (type "<em>password</em>")</label>
+            <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" #password>
+            <div style="display: none;" id="errorpass" class="alert alert-danger alert-dismissible fade show" role="alert">
+                Ingrese una contraseña
+                <button onclick="dismiss(this)" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+        </div>
+        <button (click)="login(username.value, password.value)" type="submit" class="btn btn-primary">Iniciar sesión</button> {{mensajeError}}
+    </div>
+
+</form>
+
+<button (click)="logout()" *ngIf="authService.getUser()" class="btn btn-primary">Salir!</button>

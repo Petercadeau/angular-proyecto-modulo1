@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['/home']">Ruteo Simple</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <h1>
+        <b [innerHTML]="'HOLA' | translate"></b>
+    </h1>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/destino']">Destino</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/chat']">Mensajes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/login']">Login</a>
+            </li>
+        </ul>
+        <div style="float: right;">
+            <select class="form-control" (change)="translate.use($event.target.value)">
+                <option value="es">Español</option>
+                <option value="fr">France</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>

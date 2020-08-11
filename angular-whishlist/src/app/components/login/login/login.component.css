@@ -1,0 +1,21 @@
+html,
+body {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form-login {
+    width: 100%;
+    max-width: 330px;
+    padding: 20px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px black;
+}
+
+.form-login h1 {
+    color: white;
+    font-size: 30px;
+}
